@@ -103,3 +103,4 @@ volumes:
 
 networks:
   prefect-network:
+    name: prefect-network
