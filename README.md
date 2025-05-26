@@ -3,9 +3,7 @@
 
 ## Issues
 
-Currently required to add the full network to the flow.py file as I can not attach to the network without the full one 
-
-Can add schedule parameters to the serve flow.py to allow config from code and not ui
+Can add schedule parameters to the serve flow.py to allow config from code and not ui need to test this before I oush code
 
 ## 1. To run this 
 
