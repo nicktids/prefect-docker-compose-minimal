@@ -1,0 +1,11 @@
+# Dockerfile.flow
+FROM prefecthq/prefect:3-latest
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy your flow code into the container
+COPY flows/flows.py /app/
+
+# If your flows had dependencies, add requirements.txt and install here
+COPY requirements.txt /app/
+RUN pip install --no-cache-dir -r requirements.txt

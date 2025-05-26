@@ -1,0 +1,7 @@
+FROM prefecthq/prefect:3-latest
+
+# Install Docker worker dependencies
+RUN pip install prefect-docker
+
+# Set the default command
+CMD ["prefect", "worker", "start", "--pool", "docker-pool", "--type", "docker"] 
