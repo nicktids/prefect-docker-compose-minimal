@@ -72,9 +72,12 @@ if __name__ == "__main__":
 ```
 
 then run the below to get a deployment to the docker worker that you set in the dockerfile, this worker runs the docker image from python flow and the flow registers to the work_pool_name
+
+within a venv with prefect
 ``` python 
 export PREFECT_API_URL=http://localhost:4200/api
-python flows/flows.py 
+cd flows
+python flows.py 
 ```
 
 ## 3. Have a long running docker image that you can then set a schedule to.

@@ -21,7 +21,7 @@ if __name__ == "__main__":
         build=False,
         job_variables={
             "image_pull_policy": "Never",
-            "networks": ["prefect-docker-compose-minimal-prefect-network"],
+            "networks": ["prefect-docker-compose-minimal_prefect-network"],
             "env": {
                 "PREFECT_API_URL": "http://prefect-server:4200/api"
             }
