@@ -3,7 +3,7 @@
 ## There are 2 options for running docker the short term effemeral or long term docker 
 
 
-## Issues
+## Issues / TODO
 
 Can add schedule parameters to the serve flow.py to allow config from code and not ui need to test this before I oush code
 
