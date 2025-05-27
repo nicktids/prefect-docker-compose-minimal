@@ -19,6 +19,8 @@ def retrieve_github_stars(repos: list[str]) -> list[int]:
 
 if __name__ == "__main__":
     retrieve_github_stars.serve(
+        name="retrieve-github-stars",
+        cron="*/5 * * * *",
         parameters={
             "repos": ["python/cpython", "prefectHQ/prefect"],
         }

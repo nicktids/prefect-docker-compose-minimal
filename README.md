@@ -1,9 +1,13 @@
 # There are 2 options for running docker the short term effemeral or long term docker 
 
+This small repo shows how to add both to a prefect server. 
 
-## Issues
+- First a short term image (effemeral) :  prefect-flow
+- Second a longer term image : prefect-longrunning
 
-Can add schedule parameters to the serve flow.py to allow config from code and not ui need to test this before I oush code
+Both running on a server and and the shorter term image run through a worker
+
+
 
 ## 1. To run this 
 
@@ -11,6 +15,11 @@ Can add schedule parameters to the serve flow.py to allow config from code and n
 docker compose up -d --build
 ```
 
+### Optional to turn on "Auto Remove (Optional)" within the Docker Worker
+
+Still looking for the option to get this to be done in the docker compose.
+
+![Alt text](images/AutoRemoveContainers.png?raw=true "Title")
 
 
 ## 2. Run an images short term 
