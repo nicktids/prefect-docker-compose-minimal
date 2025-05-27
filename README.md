@@ -1,22 +1,28 @@
 # Prefect docker example 
 
-## There are 2 options for running docker the short term effemeral or long term docker 
+# There are 2 options for running docker the short term effemeral or long term docker 
 
+This small repo shows how to add both to a prefect server. 
 
-## Issues / TODO
+- First a short term image (effemeral) :  prefect-flow
+- Second a longer term image : prefect-longrunning
 
-Can add schedule parameters to the serve flow.py to allow config from code and not ui need to test this before I oush code
+Both running on a server and and the shorter term image run through a worker
 
-## 1. To run this 
+## To run this 
 
 ``` 
 docker compose up -d --build
 ```
 
+### Optional to turn on "Auto Remove (Optional)" within the Docker Worker
+
+Still looking for the option to get this to be done in the docker compose.
+
+![Alt text](images/AutoRemoveContainers.png?raw=true "Title")
 
 
-## 2. Run an images short term 
-
+## Short Term Image
 
 Build a docker file from within the docker compose image  see   prefect-flows:
 
@@ -26,7 +32,7 @@ prefect-flows:
       context: .
       dockerfile: Dockerfile
     image: prefect-flows:latest
-    command: "echo 'Flows image built successfully'"
+    command: "python flows.py"
     environment:
       PREFECT_API_URL: http://prefect-server:4200/api
     networks:
@@ -82,7 +88,7 @@ cd flows
 python flows.py 
 ```
 
-## 3. Have a long running docker image that you can then set a schedule to.
+## Long Running Image
 
 
 ``` Dockerfile

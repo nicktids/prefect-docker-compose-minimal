@@ -7,7 +7,10 @@ services:
       context: .
       dockerfile: Dockerfile.flow
     image: prefect-flows:latest
-    command: "echo 'Flows image built successfully'"
+    depends_on:
+      prefect-server:
+        condition: service_healthy
+    command: "python flows.py"
     environment:
       PREFECT_API_URL: http://prefect-server:4200/api
     networks:
@@ -75,6 +78,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.worker
+    image: prefect-worker:latest
     command: >
       sh -c "
         echo 'Waiting for Prefect server to be ready...' &&
